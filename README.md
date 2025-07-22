@@ -41,10 +41,11 @@ This repository presents the experimental results and analysis of *Marcel*, a cu
 The implementation details of the agent (F, B, P, M modules) are confidential and are not released. Only benchmark results and structural analysis are provided under the following license:
 
 **License**: `CC BY-NC-ND 4.0`
+🔗 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ## 🔗 Citation
 
-If you use these results or refer to Marcel's architecture in your work, please cite the accompanying paper:
+If you use these results or refer to Marcel's architecture in your work, please cite the accompanying paper an:
 
 > "Asymmetric Convergence in Hybrid Actor-Critic Agents: A Comparative Study of Seed Effects Using Marcel", 2025.
 
