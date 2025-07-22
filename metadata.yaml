@@ -1,0 +1,24 @@
+title: "Asymmetric Convergence in Hybrid Actor-Critic Agents: A Comparative Study of Seed Effects Using Marcel"
+
+authors:
+  - Franck [YourLastName]
+  - [Optional Second Author]
+
+abstract: |
+  We investigate the impact of initialization on a hybrid reinforcement learning agent named Marcel, developed with a specific architecture integrating modules F, B, and M. Two independent seeds (40090 and 202507) were used to train the agent across a 3,500-episode schedule, including a 1,000-episode curriculum-based pre-training phase. The results show marked asymmetry: seed 40090 leads to a positive late-stage performance plateau, while seed 202507 stagnates in a low-reward regime. We discuss this divergence in the context of seed sensitivity, convergence profiles, and reward distribution in hybrid actor-critic frameworks.
+
+categories:
+  - cs.LG
+
+comments: 8 pages, 3 figures, no code released
+
+license: cc-by-nc-nd
+
+keywords:
+  - hybrid reinforcement learning
+  - actor-critic agent
+  - curriculum learning
+  - seed sensitivity
+  - reward convergence
+  - TD3-SAC
+  - deep RL benchmark

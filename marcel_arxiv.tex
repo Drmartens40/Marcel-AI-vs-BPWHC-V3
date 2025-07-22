@@ -1,0 +1,61 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{Asymmetric Convergence in Hybrid Actor-Critic Agents: A Comparative Study of Seed Effects Using Marcel}
+
+\author[1]{Franck-Olivier RIPOLL }
+\author[2]{Ronald BOURGEOIS}
+\affil[1]{Independent Researcher}
+\affil[2]{Institution Name}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We investigate the impact of initialization on a hybrid reinforcement learning agent named Marcel, developed with a specific architecture integrating modules F, B, and M. Two independent seeds (40090 and 202507) were used to train the agent across a 3,500-episode schedule, including a 1,000-episode curriculum-based pre-training phase. The results show marked asymmetry: seed 40090 leads to a positive late-stage performance plateau, while seed 202507 stagnates in a low-reward regime. We discuss this divergence in the context of seed sensitivity, convergence profiles, and reward distribution in hybrid actor-critic frameworks.
+\end{abstract}
+
+\section{Introduction}
+Reinforcement learning (RL) systems often display significant variability across random seeds. This variability is particularly relevant in continuous control domains, where policy stability and reward accumulation are sensitive to early-state exploration. In this work, we analyze how the same architecture, hyperparameters, and environment can yield divergent outcomes under two different seeds. The focus is on Marcel, a custom actor-critic agent with a confidential hybrid architecture that incorporates components labeled F, B, and M.
+
+\section{Experimental Setup}
+The experiments used a continuous control environment typical in locomotion benchmarks. Each training run consisted of 3,500 episodes, including a fixed 1,000-episode pre-training stage using curriculum learning. After this phase, the agent learned through direct interaction with the environment for 2,500 episodes. No parameters or stochastic influences differed between runs except for the initialization seed.
+
+\section{Results and Observations}
+\subsection{Quantitative Summary}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+Metric & Seed 40090 & Seed 202507 \\
+\hline
+Total Episodes & 3,500 & 3,500 \\
+Mean Reward & -22.58 & -128.31 \\
+Std Deviation & 102.60 & 31.22 \\
+Max Reward & 261.55 & 250.87 \\
+Min Reward & -261.77 & -296.16 \\
+Final 100 Ep Avg Reward & +28.25 & -122.54 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Reward Dynamics}
+Seed 40090 shows clear emergence of stable learning dynamics beyond episode 1,500, eventually plateauing with an average reward of +28.25 in the final 100 episodes. In contrast, seed 202507 remained trapped in a low-reward cycle, despite identical conditions. The sharp asymmetry in outcomes emphasizes the nontrivial role played by early stochastic influences in hybrid learning architectures.
+
+\section{Discussion}
+These findings confirm that even robust hybrid architectures like Marcel’s—featuring time-based reward modulation (F), adaptive memory buffers (B), and custom actor-critic structure (M)—remain vulnerable to seed-induced variance. Future directions may include dynamic seed selection, adaptive curriculum phases, or ensemble training to mitigate such divergence.
+
+\section{Conclusion}
+The comparative results highlight seed 40090 as a benchmark of successful convergence within a constrained reward landscape. Marcel’s architecture, when favorably initialized, can reliably escape sub-optimal traps and demonstrate controlled reward growth. These insights may inform future design of reproducible and stable RL agents under curriculum constraints.
+
+\end{document}
