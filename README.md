@@ -1,11 +1,11 @@
-# Marcel: Asymmetric Behavior in Hybrid Actor-Critic Architectures
+# Kobonet-M: Asymmetric Behavior in Hybrid Actor-Critic Architectures
 
 This repository presents the experimental results and analysis of *Marcel*, a custom hybrid reinforcement learning agent on BipedalWalkerHardcore-V3 environment. The project explores seed sensitivity and reward convergence in continuous control tasks using two distinct training initializations (40090 and 202507). It is designed for transparency in reproducible deep RL research without disclosing implementation details.
 Results are overpassed all expected.
 
 ## 📌 Overview
 
-- **Agent Name**: Marcel
+- **Agent Name**: Kobonet-M
 - **Type**: Hybrid Actor-Critic
 - **Framework**: Custom modules (F, B, P, M)
 - **Curriculum Learning**: 1,000 episodes pre-train
